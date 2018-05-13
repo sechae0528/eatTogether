@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf-8">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <tr>
+      <th>여행일정</th>
+      <td><input type = "date" name= "regdate" size="20" id = "regdate" maxlength="40"></td>
+    </tr>
+    <a href="/together_list/togetherform">모집글 수정</a><br>
+    <a href="/together_list/period"> 날짜 </a><br>
+    <a href="/together_list/haeundae"> 해운대 </a><br>
+    <table width="600" border="1">
+  <tr>
+    <th width="100">여행지역</th>
+    <th width="100">음식종류</th>
+    <th width="40">인원</th>
+    <th width="300">날짜</th>
+  </tr>
+
+  <%  for(var i=0, len = docs.length; i<len, item =docs[i]; i++){ %>
+  <tr>
+
+    <td><%=item.trip_area%></td>
+    <td><%=item.food_cate%></td>
+    <td><%=item.people%></td>
+    <td><%=item.period%></td>
+    </tr>
+
+    <% } %>
+
+      </table>
+
+  </body>
+</html>

@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title><%=title%></title>
+	<link rel='stylesheet' href='/stylesheets/style.css' />
+	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script>
+		$(function(){
+			$("#btn1").click(function(){
+			if($("#Gu").val() == "") {
+				alert("지역을 입력하세요");
+				$("#Gu").focus();
+				return;
+			}
+			if($("#food_name").val() == "") {
+				alert("음식점 이름을 입력하세요");
+				$("#food_name").focus();
+				return;
+			}
+			if($("#main_menu").val() == "") {
+				alert("메뉴를 입력하세요");
+				$("#main_menu").focus();
+				return;
+			}
+			if($("#food_price").val() == "") {
+				alert("가격을 입력하세요");
+				$("#food_price").focus();
+				return;
+			}
+			frm1.submit();
+		});
+	});
+	</script>
+
+</head>
+<body>
+	<h1><%=title%></h1>
+	<a href="/together_list">리스트</a><br>
+		<form name="frm1" method="post" enctype="multipart/form-data">
+			<table width ="400" border="1">
+				<tr>
+					<th>여행일정</th>
+					<td><input type = "date" name= "period" size="20" id = "period" maxlength="40"></td>
+				</tr>
+				<tr>
+					<th>여행지역</th>
+					<td><input name= "trip_area" size="20" id = "trip_area" maxlength="40"></td>
+				</tr>
+				<tr>
+					<th>음식종류</th>
+					<td><input name= "food_cate" size="20" id = "food_cate" maxlength="40"></td>
+				</tr>
+				<tr>
+					<th>인원수</th>
+					<td><input name="people" id = "people" size="20" maxlength="40"></td>
+				</tr>
+				<tr>
+					<th>내용</th>
+					<td><textarea name ="together_comment" id="together_comment" rows="5" cols="30"></textarea></td>
+				<tr>
+				<tr>
+					<th>이미지</th>
+					<td><input type="file" id="picture" name="picture"></td>
+				</tr>
+
+					<td colspan="2">
+						<input type="button" id ="btn1" value="쓰기">
+						<input type="reset" value="취소">
+				</td>
+				</tr>
+
+			</table>
+		</form>
+</body>
+</html>
